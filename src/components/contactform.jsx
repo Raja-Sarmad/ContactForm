@@ -12,12 +12,12 @@ const ContactForm = () => {
     setStatus({ type: '', message: '' });
 
     emailjs.sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      form.current,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-    )
-    
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,    // process.env ki jagah ye
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,   // VITE_ prefix ke sath
+  form.current,
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY     // VITE_ prefix ke sath
+)
+
     .then((result) => {
         setLoading(false);
         setStatus({ 
